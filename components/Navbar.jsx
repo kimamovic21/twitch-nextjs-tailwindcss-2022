@@ -3,8 +3,10 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import Logo from '../public/assets/logo.png';
 import MyDropdown from './MyDropdown';
+import MyDropdown1 from './MyDropdown1';
 import {BsSearch, BsPerson} from 'react-icons/bs';
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
+import {useSession, signIn, signOut} from 'next-auth/react';
 
 const Navbar = () => {
 
@@ -12,7 +14,9 @@ const Navbar = () => {
 
   const handleNav = () => {
     setNav(!nav)
-  }
+  };
+
+  const { data: session } = useSession();
 
   return (
     <div className='fixed h-14 w-full flex flex-nowrap items-center p-4 bg-[#080808] mb-2 z-10'>
@@ -56,14 +60,27 @@ const Navbar = () => {
         {/* Right side */}
 
         <div className='hidden md:flex grow items-center justify-end'>
+          {session ? (
           <div className='flex items-center'>
-            <Link href='/'>
+            <Link href='/account'>
+              <div className='flex items-center'>
+                <p className='pr-4 cursor-pointer'>
+                  Welcome, {session.user.name}
+                </p>
+              </div>
+            </Link>
+            <MyDropdown1 />
+          </div>
+          ) : (
+          <div className='flex items-center'>
+            <Link href='/account'>
               <button className='px-4 py-[16px] rounded-lg font-bold bg-[#9147ff]'>
                  Account
               </button>
             </Link>
             <BsPerson size={30}/>
           </div>
+          )}
         </div>
 
 
@@ -97,7 +114,7 @@ const Navbar = () => {
               <Link href='/'>Top categories</Link>
             </li>
             <li className='p-4 text-3xl font-bold'>
-              <Link href='/'>Account</Link>
+              <Link href='/account'>Account</Link>
             </li>
           </ul>
         </div>
@@ -121,3 +138,5 @@ export default Navbar;
 // 9. u divu za Hamburger menu dodajemo onClick dogadaj
 // 10. dodajemo ternarni operator za nav
 // 11. u divu za Mobile menu dodajemo ternarni operator za nav
+// 12. u divu za desno dodajemo ternarni operator
+// 13. 
