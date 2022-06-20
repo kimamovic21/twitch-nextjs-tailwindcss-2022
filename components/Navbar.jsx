@@ -104,16 +104,20 @@ const Navbar = () => {
           }
         >
           <ul className='text-center'>
-            <li className='p-4 text-3xl font-bold'>
+            <li onClick={() => setNav(false)}
+                className='p-4 text-3xl font-bold'>
               <Link href='/'>Home</Link>
             </li>
-            <li className='p-4 text-3xl font-bold'>
-              <Link href='/'>Live channels</Link>
+            <li onClick={() => setNav(false)}
+                className='p-4 text-3xl font-bold'>
+              <Link href='/#live'>Live channels</Link>
             </li>
-            <li className='p-4 text-3xl font-bold'>
-              <Link href='/'>Top categories</Link>
+            <li onClick={() => setNav(false)}
+                className='p-4 text-3xl font-bold'>
+              <Link href='/#categories'>Top categories</Link>
             </li>
-            <li className='p-4 text-3xl font-bold'>
+            <li onClick={() => setNav(false)}
+                className='p-4 text-3xl font-bold'>
               <Link href='/account'>Account</Link>
             </li>
           </ul>
@@ -139,4 +143,3 @@ export default Navbar;
 // 10. dodajemo ternarni operator za nav
 // 11. u divu za Mobile menu dodajemo ternarni operator za nav
 // 12. u divu za desno dodajemo ternarni operator
-// 13. 

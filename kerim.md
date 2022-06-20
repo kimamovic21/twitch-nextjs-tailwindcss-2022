@@ -51,4 +51,19 @@
 51. otvaramo i uredujemo .env fajl id-eve za google auth
 52. u next.js congig fajlu moramo urediti module exports
 53. kreiramo i uredujemo MyDropdown1.jsx komponentu
-54. 
+54. uredujemo tailwind.config.js fajl
+55. kreiramo i uredujemo SideMenu.jsx komponentu
+56. otvaramo web stranicu https://www.mockaroo.com/
+57. uredujemo polja i tipove
+58. preuzmemo podatke na racunar kao mock-data.js fajl
+59. kreiramo novi folder data i u taj folder dodajemo mock-data.json fajl
+60. kreiramo i uredujemo Layout.jsx komponentu
+61. kreiramo i uredujemo Main.jsx komponentu
+62. index.js fajlu dodajemo Layout komponentu
+63. kreiramo i uredujemo LiveChannels.jsx komponentu
+64. kreiramo i uredujemo LiveChannelsItem.jsx komponentu
+65. kreiramo i uredujemo Hero.jsx komponentu
+66. kreiramo i uredujemo IconBar.jsx komponentu
+67. kreiramo i uredujemo Categories.jsx komponentu
+68. kreiramo i uredujemo CategoriesItem.jsx komponentu
+
